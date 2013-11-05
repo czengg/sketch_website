@@ -59,61 +59,59 @@ $(".projects").mousewheel(function(event,delta){
     }
 }); 
 
-$(".projects").on("swipeup", function() {
+$(".projects").swipe({
+    swipeUp:function(event, direction, distance, duration, fingerCount) {
+        var div = $(this);
 
-    var div = $(this);
+        var top = parseInt(div.css("top"));
+        var height = $(document).height();
+        var divHeight = parseInt(div.css("height"));
+        var width = $(document).width();
 
-    var top = parseInt(div.css("top"));
-    var height = $(document).height();
-    var divHeight = parseInt(div.css("height"));
-    var width = $(document).width();
+        var prop;
+        if(width > 600) {
+            prop = .2;
+        }
+        else {
+            prop = .45;
+        }
 
-    var prop;
-    if(width > 600) {
-        prop = .2;
+        if((top+divHeight) > height) {
+            div.css("top", parseInt(div.css("top"))-30);
+        }
+
+        if (parseInt(div.css("top")) < 0) {
+            $(".go-top").fadeIn(200);
+        } else {
+            $(".go-top").fadeOut(200);
+        }
+    },
+    swipeDown:function(event, direction, distance, duration, fingerCount) {
+        var div = $(this);
+
+        var top = parseInt(div.css("top"));
+        var height = $(document).height();
+        var divHeight = parseInt(div.css("height"));
+        var width = $(document).width();
+
+        var prop;
+        if(width > 600) {
+            prop = .2;
+        }
+        else {
+            prop = .45;
+        }
+
+        if((top+divHeight) > height) {
+            div.css("top", parseInt(div.css("top"))+30);
+        }
+
+        if (parseInt(div.css("top")) < 0) {
+            $(".go-top").fadeIn(200);
+        } else {
+            $(".go-top").fadeOut(200);
+        }
     }
-    else {
-        prop = .45;
-    }
-
-    if((top+divHeight) > height) {
-        div.css("top", parseInt(div.css("top"))-10);
-    }
-
-    if (parseInt(div.css("top")) < 0) {
-        $(".go-top").fadeIn(200);
-    } else {
-        $(".go-top").fadeOut(200);
-    }
-});
-
-$(".projects").on("swipedown", function() {
-
-    var div = $(this);
-
-    var top = parseInt(div.css("top"));
-    var height = $(document).height();
-    var divHeight = parseInt(div.css("height"));
-    var width = $(document).width();
-
-    var prop;
-    if(width > 600) {
-        prop = .2;
-    }
-    else {
-        prop = .45;
-    }
-
-    if((top+divHeight) > height) {
-        div.css("top", parseInt(div.css("top"))-10);
-    }
-
-    if (parseInt(div.css("top")) < 0) {
-        $(".go-top").fadeIn(200);
-    } else {
-        $(".go-top").fadeOut(200);
-    }
-
 });
 
 $(".go-top").click(function(event) {
