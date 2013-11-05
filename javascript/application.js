@@ -77,7 +77,7 @@ $(".projects").swipe({
         }
 
         if((top+divHeight) > height) {
-            div.css("top", parseInt(div.css("top"))-30);
+            div.css("top", parseInt(div.css("top"))-70);
         }
 
         if (parseInt(div.css("top")) < 0) {
@@ -103,7 +103,7 @@ $(".projects").swipe({
         }
 
         if((top+divHeight) > height) {
-            div.css("top", parseInt(div.css("top"))+30);
+            div.css("top", parseInt(div.css("top"))+70);
         }
 
         if (parseInt(div.css("top")) < 0) {
