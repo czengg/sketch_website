@@ -2,26 +2,26 @@
 
 // EVENT LISTENERS
 
-$(".name").click(function(){
+$(".name").on("click tap",function(){
 	window.location = "../templates/home.html"
 });
 
-$("#facebook").click(function() {
+$("#facebook").on("click tap",function() {
 		url = "https://www.facebook.com/cindy.zeng.9";
 		window.open(url,"_blank");
 	});
 
-$("#linkedin").click(function() {
+$("#linkedin").on("click tap",function() {
 		url = "http://www.linkedin.com/profile/view?id=229921382";
 		window.open(url,"_blank");
 	});
 
-$("#twitter").click(function() {
+$("#twitter").on("click tap",function() {
 		url = "https://twitter.com/czengg";
 		window.open(url,"_blank");
 	});
 
-$("#email").click(function() {
+$("#email").on("click tap",function() {
 	window.location.href = "mailto:czeng@andrew.cmu.edu";
 });
 
@@ -114,7 +114,7 @@ $(".projects").swipe({
     }
 });
 
-$(".go-top").click(function(event) {
+$(".go-top").on("click tap",function(event) {
     event.preventDefault();
 
     var height = $(document).height();

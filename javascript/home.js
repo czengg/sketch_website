@@ -3,7 +3,7 @@
 
 $(document).ready($(".motto").css("opacity","1"));
 
-$(".welcome").click(function() {
+$(".welcome").on("click tap",function() {
 	$(".projects").empty();
 	$(".projects").removeClass("clickme");
 	$(".motto-end").css("opacity","0");
@@ -81,7 +81,7 @@ function addBio() {
 	$(".projects").append(bio);
 }
 
-$(".design").click(function() {
+$(".design").on("click tap",function() {
 
 	var hidden = $(".motto-end").attr("hidden");
 
@@ -197,7 +197,7 @@ function addDesign() {
 
 }
 
-$(".code").click(function() {
+$(".code").on("click tap",function() {
 	var hidden = $(".motto-end").attr("hidden");
 
 	if(hidden !== undefined) {
@@ -367,7 +367,7 @@ function youtubeEmbed(link) {
 	return iframe;
 }
 
-$(".do").click(function() {
+$(".do").on("click tap",function() {
 	var hidden = $(".motto-end").attr("hidden");
 
 	if(hidden !== undefined) {
